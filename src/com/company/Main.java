@@ -236,7 +236,7 @@ public class Main {
                 out.write("## 目录");
                 pagename.forEach(s -> {
                     gettiter();
-                    String str = "- [" + titles.get(index.get()) + "](../contrnt/" + s + ")";
+                    String str = "- [" + titles.get(index.get()) + "](../content/" + s + ")";
                     try {
                         out.newLine();
                         out.write(str);
