@@ -38,7 +38,7 @@ public class Main {
             createDir(cover);
             createDir(img);
             List<String> r = new ArrayList<>();
-            String s2="";
+            String s2 = "";
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(path + "/README.md"));
                 String str;
@@ -63,13 +63,13 @@ public class Main {
                                 }
                             }
                             if (index < 6) {
-                                w.write(s1 + "<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=150 height=180/>|");
+                                w.write(s1 + "<img src=\"Book/CoverPhoto/" + bookname  + suffix + " width=150 height=180/>|");
                                 w.newLine();
-                            }else {
+                            } else {
                                 w.write(s1);
                                 w.newLine();
                             }
-                        }else {
+                        } else {
                             w.write(s1);
                             w.newLine();
                         }
@@ -84,16 +84,16 @@ public class Main {
                                 }
                             }
                             if (ci < 6) {
-                                w.write(s1 + "[" + bookname + "]()|");
+                                w.write(s1 + "[" + bookname + "](Book" + bookname + "/cover/COVER.md)|");
                                 w.newLine();
                             } else {
                                 w.write(s1);
                                 w.newLine();
-                                w.write("|<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=150 height=180/>|");
+                                w.write("|<img src=\"Book/CoverPhoto/" + bookname  + suffix +  "width=150 height=180/>|");
                                 w.newLine();
-                                w.write("|[" + bookname + "](Book"+bookname+"/cover/COVER.md)|");
+                                w.write("|[" + bookname + "](Book" + bookname + "/cover/COVER.md)|");
                             }
-                        }else {
+                        } else {
                             w.write(s1);
                             w.newLine();
                         }
