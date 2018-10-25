@@ -10,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         //更新目录
-//        new Book("demo");
+//        new Book("spirng mvc");
         //创建书文件夹
-        new add("demo", ".jpg");
+        new add("Spring-mvc", ".png");
 
     }
 
