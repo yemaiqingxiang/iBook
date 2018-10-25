@@ -63,7 +63,7 @@ public class Main {
                                 }
                             }
                             if (index < 6) {
-                                w.write(s1 + "<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=120 height=160/>|");
+                                w.write(s1 + "<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=150 height=180/>|");
                                 w.newLine();
                             }else {
                                 w.write(s1);
@@ -89,7 +89,7 @@ public class Main {
                             } else {
                                 w.write(s1);
                                 w.newLine();
-                                w.write("|<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=120 height=160/>|");
+                                w.write("|<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=150 height=180/>|");
                                 w.newLine();
                                 w.write("|[" + bookname + "](Book"+bookname+"/cover/COVER.md)|");
                             }
