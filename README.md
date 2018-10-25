@@ -1,4 +1,3 @@
 ## iBook
-<img src="Book/CoverPhoto/test.jpg" width=256 height=256 />   
- ![](Book/CoverPhoto/test.jpg)  
-[test](Book/test/cover/COVER.md)
+<img src="Book/CoverPhoto/test.jpg" width=25 height=25/>   
+<img src="Book/CoverPhoto/test.jpg" width=25 height=25 />   
