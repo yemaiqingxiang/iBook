@@ -84,14 +84,14 @@ public class Main {
                                 }
                             }
                             if (ci < 6) {
-                                w.write(s1 + "[" + bookname + "](Book" + bookname + "/cover/COVER.md)|");
+                                w.write(s1 + "[" + bookname + "](Book/" + bookname + "/cover/COVER.md)|");
                                 w.newLine();
                             } else {
                                 w.write(s1);
                                 w.newLine();
                                 w.write("|<img src=\"Book/CoverPhoto/" + bookname  + suffix +  "width=150 height=180/>|");
                                 w.newLine();
-                                w.write("|[" + bookname + "](Book" + bookname + "/cover/COVER.md)|");
+                                w.write("|[" + bookname + "](Book/" + bookname + "/cover/COVER.md)|");
                             }
                         } else {
                             w.write(s1);
