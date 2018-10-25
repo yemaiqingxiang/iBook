@@ -7,12 +7,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
+    private static final String bookName="";
 
     public static void main(String[] args) {
         //更新目录
-        new Book("Spring-mvc");
+        new Book(bookName);
         //创建书文件夹
-//        new add("Spring-mvc", ".png");
+//        new add(bookName, ".png");
 
     }
 
