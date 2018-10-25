@@ -12,7 +12,7 @@ public class Main {
         //更新目录
 //        new Book("demo");
         //创建书文件夹
-      new add("test");
+        new add("demo", ".jpg");
 
     }
 
@@ -20,10 +20,8 @@ public class Main {
      * 创建文件
      */
     static class add {
-        String bookname;
 
-        public add(String s) {
-            this.bookname = s;
+        public add(String bookname, String suffix) {
             String path = "";
             File directory = new File("");//设定为当前文件夹
             try {
@@ -39,16 +37,72 @@ public class Main {
             createDir(content);
             createDir(cover);
             createDir(img);
+            List<String> r = new ArrayList<>();
+            String s2="";
             try {
-                BufferedWriter w=new BufferedWriter(new FileWriter(path+"/README.md",true));
-                w.write(" ![](Book/CoverPhoto/"+bookname+".jpg)  ");
-                w.newLine();
-                w.write("["+bookname+"](Book/"+bookname+"/cover/COVER.md)");
+                BufferedReader reader = new BufferedReader(new FileReader(path + "/README.md"));
+                String str;
+                while ((str = reader.readLine()) != null) {
+                    r.add(str);
+                }
+                reader.close();
+                BufferedWriter w = new BufferedWriter(new FileWriter(path + "/README.md", false));
+                for (int i = 0; i < r.size(); i++) {
+                    String s1 = r.get(i);
+                    if (i < 3) {
+                        w.write(s1);
+                        w.newLine();
+                    } else if (i % 2 == 1) {
+                        System.out.println("双" + i);
+                        if (i == r.size() - 2) {
+                            char[] chars = s1.toCharArray();
+                            int index = 0;
+                            for (char c : chars) {
+                                if (c == '|') {
+                                    index++;
+                                }
+                            }
+                            if (index < 6) {
+                                w.write(s1 + "<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=120 height=160/>|");
+                                w.newLine();
+                            }else {
+                                w.write(s1);
+                                w.newLine();
+                            }
+                        }else {
+                            w.write(s1);
+                            w.newLine();
+                        }
+                    } else {
+                        System.out.println("单" + i);
+                        if (i == r.size() - 1) {
+                            char[] chars = s1.toCharArray();
+                            int ci = 0;
+                            for (char c : chars) {
+                                if (c == '|') {
+                                    ci++;
+                                }
+                            }
+                            if (ci < 6) {
+                                w.write(s1 + "[" + bookname + "]()|");
+                                w.newLine();
+                            } else {
+                                w.write(s1);
+                                w.newLine();
+                                w.write("|<img src=\"Book/CoverPhoto/\"" + bookname + "\"" + suffix + "\" width=120 height=160/>|");
+                                w.newLine();
+                                w.write("|[" + bookname + "](Book"+bookname+"/cover/COVER.md)|");
+                            }
+                        }else {
+                            w.write(s1);
+                            w.newLine();
+                        }
+                    }
+                }
                 w.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
 
 
@@ -119,7 +173,7 @@ public class Main {
 
         public Book(String s) {
             this.bookName = s;
-            this.b=new iBook();
+            this.b = new iBook();
             readFile();
             b.init();
         }
@@ -187,7 +241,7 @@ public class Main {
                         out.write(str);
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }finally {
+                    } finally {
                         try {
                             out.close();
                         } catch (IOException e) {
