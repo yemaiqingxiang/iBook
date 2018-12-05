@@ -56,11 +56,12 @@ class iBook {
         pagepath.forEach(s -> {
             File file = new File(s);
             try {
-                System.out.println(s);
+                String name = s.substring(s.lastIndexOf('/')+1,s.lastIndexOf('.'));
+                System.out.println(name);
                 FileReader fileReader = new FileReader(file);
                 BufferedReader br = new BufferedReader(fileReader);
                 String s1 = br.readLine();
-                titles.add(s1.substring(s1.indexOf(" "), s1.length()));
+                titles.add(name);
             } catch (Exception e) {
                 e.printStackTrace();
             }
