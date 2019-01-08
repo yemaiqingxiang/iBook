@@ -1,8 +1,14 @@
 ### 引入初始化配置  
+> 输入命令  
+```
+npm i normalize.css
+```
+在main.js中添加
 ```
 import 'normalize.css';
 ```
 ### 动画
+
 ```css
 @keyframes bounce-in {//定义动画
     0% {
