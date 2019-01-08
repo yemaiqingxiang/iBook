@@ -8,7 +8,13 @@ npm i normalize.css
 import 'normalize.css';
 ```
 ### 动画
-
+```
+npm i normalize.css -S
+```
+```
+import animate from 'animate.css';
+Vue.use(animate);
+```
 ```css
 @keyframes bounce-in {//定义动画
     0% {
